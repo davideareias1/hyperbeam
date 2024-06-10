@@ -1,54 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hyperbeam Adaptive iFrame</title>
     <style>
-        body, html {
+        body,
+        html {
             margin: 0;
             padding: 0;
             width: 100%;
             height: 100%;
             overflow: hidden;
         }
+
         #hyperbeam-iframe {
             border: none;
             width: 100%;
             height: 100%;
         }
     </style>
+    <script type="module" src="https://unpkg.com/@hyperbeam/web@latest/dist/index.js"></script>
 </head>
+
 <body>
-    <iframe id="hyperbeam-iframe" src="https://6981fpxrkseqr5pmr7pxm2sj1.hyperbeam.com/YGiJxnXTSPWNkkCzdUxaFQ?token=pq2vUNSWtrPCx8B9wXsjgjxiaPENroOivirglR-N46U"></iframe>
+    <div id="container"></div>
 
-    <script src="https://cdn.hyperbeam.com/hb.js"></script>
-    <script>
-        // Initialize Hyperbeam
-        const iframe = document.getElementById('hyperbeam-iframe');
-        const hb = new Hyperbeam('KdZ4gHLU9LHlXHZiXiyO-qnfAUmjEAKuUKgnPl9Zccg');
+    <script type="module">
+        import Hyperbeam from "https://unpkg.com/@hyperbeam/web@latest/dist/index.js"
 
-        // Function to resize the iframe and the browser window
-        function resizeIframe() {
-            const width = window.innerWidth;
-            const height = window.innerHeight;
-            iframe.width = width;
-            iframe.height = height;
+        const embedURL = "https://6981fpxrkseqr5pmr7pxm2sj1.hyperbeam.com/YGiJxnXTSPWNkkCzdUxaFQ?token=pq2vUNSWtrPCx8B9wXsjgjxiaPENroOivirglR-N46U"
 
-            hb.resize(width, height)
-                .then(response => {
-                    console.log('Browser window resized:', response);
-                })
-                .catch(error => {
-                    console.error('Error resizing browser window:', error);
-                });
-        }
-
-        // Initial resize
-        resizeIframe();
-
-        // Resize the iframe and browser window on window resize
-        window.addEventListener('resize', resizeIframe);
+        const hb = await Hyperbeam(container, embedURL)
+        hb.resize(window.innerWidth, window.innerHeight)        
     </script>
 </body>
+
 </html>
