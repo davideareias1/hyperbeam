@@ -29,31 +29,6 @@
             height: 100%;
         }
 
-        #simulatedButton {
-            width: 50px;
-            height: 50px;
-            background-color: #007bff;
-            border: none;
-            border-radius: 50%;
-            position: absolute;
-            left: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            cursor: pointer;
-        }
-
-        #simulatedButton::after {
-            content: "";
-            width: 20px;
-            height: 20px;
-            border-top: 2px solid #fff;
-            border-right: 2px solid #fff;
-            transform: rotate(45deg);
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
     </style>
     <script type="module" src="https://unpkg.com/@hyperbeam/web@latest/dist/index.js"></script>
 </head>
@@ -66,7 +41,7 @@
         import Hyperbeam from "https://unpkg.com/@hyperbeam/web@latest/dist/index.js"
 
         const container = document.getElementById('container');
-        const embedURL = "https://2bpzwigob3iqq580wkm76i3kd.hyperbeam.com/QB97RgQyQqSXHCxh-Pe7KQ?token=rHxH_PmfxFrFuYyMRhPMlr3RGB9Ah9a7SrvVed1i9lE";
+        const embedURL = "https://2bpzwigob3iqq580wkm76i3kd.hyperbeam.com/xPoZgIZ_RsqMMEQUreksyQ?token=pID7zZJfXBW-2us60s_W82AHG7xa5HEXHnWMxwuLrbw";
 
         async function initializeHyperbeam() {
             const hb = await Hyperbeam(container, embedURL);
@@ -86,12 +61,6 @@
         }
 
         initializeHyperbeam();
-
-        // Function to simulate pressing Enter key
-        function simulateEnterKey() {
-            const event = new KeyboardEvent('keypress', { 'key': 'Enter' });
-            document.dispatchEvent(event);
-        }
 
         // Add event listener to the button to simulate Enter key press
         document.getElementById('simulatedButton').addEventListener('click', simulateEnterKey);
