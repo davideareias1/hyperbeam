@@ -12,10 +12,6 @@
             padding: 0;
             width: 100%;
             height: 100%;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
 
         #container {
@@ -28,25 +24,23 @@
             width: 100%;
             height: 100%;
         }
-
     </style>
     <script type="module" src="https://unpkg.com/@hyperbeam/web@latest/dist/index.js"></script>
 </head>
 
 <body>
     <div id="container"></div>
-    <button id="simulatedButton" title="Simulate Enter Key"></button>
 
     <script type="module">
         import Hyperbeam from "https://unpkg.com/@hyperbeam/web@latest/dist/index.js"
 
         const container = document.getElementById('container');
-        const embedURL = "https://2bpzwigob3iqq580wkm76i3kd.hyperbeam.com/xPoZgIZ_RsqMMEQUreksyQ?token=pID7zZJfXBW-2us60s_W82AHG7xa5HEXHnWMxwuLrbw";
+        const embedURL = "https://2bpzwigob3iqq580wkm76i3kd.hyperbeam.com/QB97RgQyQqSXHCxh-Pe7KQ?token=rHxH_PmfxFrFuYyMRhPMlr3RGB9Ah9a7SrvVed1i9lE";
 
         async function initializeHyperbeam() {
             const hb = await Hyperbeam(container, embedURL);
             hb.resize(window.innerWidth, window.innerHeight);
-            
+
             let prevWidth = window.innerWidth;
             let prevHeight = window.innerHeight;
 
@@ -61,9 +55,6 @@
         }
 
         initializeHyperbeam();
-
-        // Add event listener to the button to simulate Enter key press
-        document.getElementById('simulatedButton').addEventListener('click', simulateEnterKey);
     </script>
 </body>
 
